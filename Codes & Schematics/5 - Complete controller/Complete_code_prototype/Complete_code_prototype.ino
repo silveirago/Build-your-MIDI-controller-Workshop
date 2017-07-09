@@ -17,8 +17,8 @@ unsigned long debounceDelay = 5;    //* the debounce time; increase if the outpu
 /////////////////////////////////////////////
 // potentiometers
 
-const int NPots = 2; //*
-int potPin[NPots] = {A0, A1}; //* Pin where the potentiometer is
+const int NPots = 2; //* number of potentiometers
+int potPin[NPots] = {A0, A1}; //* Pins where the potentiometer are
 int potCState[NPots] = {0}; // Current state of the pot
 int potPState[NPots] = {0}; // Previous state of the pot
 int potVar = 0; // Difference between the current and previous state of the pot
