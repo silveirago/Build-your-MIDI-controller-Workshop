@@ -1,3 +1,7 @@
+#include <MIDI.h>
+MIDI_CREATE_DEFAULT_INSTANCE();
+
+
 int button = 2;
 int led = 13;
 
@@ -12,7 +16,7 @@ void setup() {
   pinMode(button, INPUT_PULLUP);
   pinMode(led, OUTPUT);
   digitalWrite(led, ledState);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -20,19 +24,24 @@ void loop() {
   buttonState = digitalRead(button);
 
   if ((millis() - lastDebounceTime) > debounceDelay) {
-    
-    if (buttonState != buttonPState) {     
+
+    if (buttonState != buttonPState) {
       lastDebounceTime = millis();
 
       if (buttonState == LOW) {
-        ledState = !ledState;
-        Serial.println(ledState);
+
+        //Serial.println("button on");
+        MIDI.sendNoteOn(36, 127, 1);
+      }
+      else {
+        //Serial.println("button off");
+        MIDI.sendNoteOn(36, 0, 1);
       }
       buttonPState = buttonState;
     }
   }
 
-  
+
 
   digitalWrite(led, ledState);
 
