@@ -4,8 +4,8 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 
 // Variables are containers of a certain type. INT variables are containers that store an integer number. We use them so the code is more readable.
 // Variables can be used values that won't change, like the pin of a potenciometer, or values that will change, like the reading of this potentiometer
-int ledPin ls= 13;
-int delayTime = 100;
+int ledPin = 13;
+int delayTime = 30;
 
 void setup() { // happens once when the Arduino starts
   
@@ -16,7 +16,7 @@ void setup() { // happens once when the Arduino starts
 
 void loop() { // loops forever
   
-  for (int i = 36; i < 48; i++) { 
+  for (int i = 36; i < 56; i++) { 
     // creates a loop that will occur X times (48), 
     // where "i" will be incremented by 1 every loop (i++) and it starts with 36
     

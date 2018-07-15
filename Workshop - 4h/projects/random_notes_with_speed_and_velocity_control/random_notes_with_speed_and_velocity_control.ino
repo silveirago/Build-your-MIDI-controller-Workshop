@@ -30,9 +30,10 @@ void loop() {
   potState = analogRead(potPin); // reads the state of the potentiometer 
   potState = map(potState, 0, 1023, 1000, 30); // maps the state of the pot and map it to a usable range
   ldrState = analogRead(ldrPin); // reads the state of the ldr and map it to a usable range
-  ldrState = map(ldrState, 220, 820, 127, 0); // reads the state of the ldr and map it to a usable range
-  
   //Serial.println(ldrState); //prints the value in the serial monitor
+  ldrState = map(ldrState, 30, 120, 127, 0); // reads the state of the ldr and map it to a usable range
+  
+  
 
   if (buttonState == LOW) { // do somthing if the button is pressed
 
